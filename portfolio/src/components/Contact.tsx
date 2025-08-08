@@ -15,12 +15,33 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send the form data to a server
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+
+    // Spam protection: Honeypot check
+    const honeypot = (document.getElementById('bot-field') as HTMLInputElement).value;
+    if (honeypot) return;
+
+    try {
+      const response = await fetch("https://formspree.io/f/xkgzprpp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert("Thank you for your message! I'll get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      alert("Error submitting form. Please check your connection and try again.");
+      console.error(error);
+    }
   };
 
   return (
@@ -57,7 +78,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-white">Email</h4>
-                  <p className="text-gray-600 dark:text-gray-400">anastasia.andoh@email.com</p>
+                  <p className="text-gray-600 dark:text-gray-400">andohanastasia3@gmail.com</p>
                 </div>
               </div>
 
@@ -67,7 +88,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-white">Phone</h4>
-                  <p className="text-gray-600 dark:text-gray-400">+233 XX XXX XXXX</p>
+                  <p className="text-gray-600 dark:text-gray-400">+233 536 611 288</p>
                 </div>
               </div>
 
@@ -87,7 +108,7 @@ const Contact = () => {
               <h4 className="font-semibold text-gray-800 dark:text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/anastasiandoh"
+                  href="https://github.com/Anadhilah" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-200 transform hover:scale-110"
@@ -95,7 +116,7 @@ const Contact = () => {
                   <Github className="h-6 w-6 text-white" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/anastasiandoh"
+                  href="https://linkedin.com/in/anastasia-andoh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-200 transform hover:scale-110"
@@ -120,6 +141,15 @@ const Contact = () => {
               Send Me a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot Field for Spam Protection */}
+              <input
+                type="text"
+                id="bot-field"
+                name="bot-field"
+                className="hidden"
+                autoComplete="off"
+              />
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Your Name

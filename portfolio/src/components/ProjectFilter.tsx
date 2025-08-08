@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Filter, Search, Eye } from 'lucide-react';
+import result from "../Images/meg.jpg";
+import intern from "../Images/intern.png";
+import mentors from "../Images/mentors.png";
+import portfolio from "../Images/portfolio.png";
+import qr from "../Images/qr.png";
+
 
 const ProjectFilter = () => {
   const [selectedFilter, setSelectedFilter] = useState('All');
@@ -11,80 +17,80 @@ const ProjectFilter = () => {
       id: 1,
       title: "Result Dashboard",
       description: "A modern, responsive admin dashboard for school result  management with real-time analytics..",
-      image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Tailwind CSS", "Chart.js", "Firebase"],
-      githubUrl: "https://github.com/anastasiandoh/ecommerce-dashboard",
+      image: result,
+      technologies: ["React", "Tailwind CSS", "TypeScript"],
+      githubUrl: "https://github.com/Anadhilah/meghis-results-hub",
       liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
-      category: "Web Application",
+      category: "EdTech",
       featured: true,
       status: "Completed",
       year: "2024"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with drag-and-drop functionality, real-time updates, and team collaboration features.",
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Zustand"],
-      githubUrl: "https://github.com/anastasiandoh/task-manager",
+      title: "Website for an NGO",
+      description: "A responsive NGO website with a built-in chatbot to assist users in accessing information about services, events, and donations in real time..",
+      image: mentors,
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Anadhilah/mentors-future-ghana-web.git",
       liveUrl: "https://task-manager-demo.vercel.app",
-      category: "Productivity",
+      category: "Nonprofit Tech",
       featured: true,
       status: "Completed",
       year: "2024"
     },
     {
       id: 3,
-      title: "Weather Forecast App",
-      description: "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "OpenWeather API", "CSS3", "Responsive Design"],
-      githubUrl: "https://github.com/anastasiandoh/weather-app",
+      title: "Internship  App",
+      description: "A  platform that connects organizations with interns, allowing companies to post openings and track recruitment status while interns can view application progress in real time.",
+      image: intern,
+      technologies: ["React", "Typescript","Tailwind Css", "Responsive Design"],
+      githubUrl: "https://github.com/Anadhilah/internApp.git",
       liveUrl: "https://weather-forecast-demo.vercel.app",
-      category: "Web Application",
+      category: " Career & Recruitment Platform",
       featured: false,
       status: "Completed",
       year: "2023"
     },
     {
       id: 4,
-      title: "AI Chat Interface",
-      description: "An intelligent chat interface with natural language processing, context awareness, and modern UI design patterns.",
-      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "TypeScript", "OpenAI API", "Tailwind CSS"],
-      githubUrl: "https://github.com/anastasiandoh/ai-chat",
+      title: "Portfolio Website",
+      description: "A responsive portfolio website to showcase my projects, skills, and contact information. Features include interactive UI components, project highlights, and a contact form for professional inquiries.",
+      image: portfolio,
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Anadhilah/portfolio.git",
       liveUrl: "https://ai-chat-demo.vercel.app",
-      category: "AI/ML",
+      category: "Personal Branding",
       featured: true,
       status: "In Progress",
       year: "2024"
     },
     {
       id: 5,
-      title: "Expense Tracker",
-      description: "A comprehensive expense tracking application with budget management, spending analytics, and financial goal setting.",
-      image: "https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "JavaScript", "Chart.js", "Local Storage"],
-      githubUrl: "https://github.com/anastasiandoh/expense-tracker",
+      title: "Check In App",
+      description: "check-in application that uses QR code scanning to log user attendance. Designed for efficiency and accuracy, with secure access control and real-time record updates.",
+      image: qr,
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Anadhilah/korean-library-qr-check.git",
       liveUrl: "https://expense-tracker-demo.vercel.app",
-      category: "Finance",
+      category: "Attendance Systems",
       featured: false,
       status: "Completed",
       year: "2023"
     },
-    {
-      id: 6,
-      title: "Cybersecurity Dashboard",
-      description: "A security monitoring dashboard with threat detection, vulnerability scanning, and real-time security metrics.",
-      image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "D3.js", "Node.js", "MongoDB"],
-      githubUrl: "https://github.com/anastasiandoh/security-dashboard",
-      liveUrl: "https://security-dashboard-demo.vercel.app",
-      category: "Security",
-      featured: true,
-      status: "In Progress",
-      year: "2024"
-    }
+    // {
+    //   id: 6,
+    //   title: "Cybersecurity Dashboard",
+    //   description: "A security monitoring dashboard with threat detection, vulnerability scanning, and real-time security metrics.",
+    //   image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+    //   technologies: ["React", "D3.js", "Node.js", "MongoDB"],
+    //   githubUrl: "https://github.com/anastasiandoh/security-dashboard",
+    //   liveUrl: "https://security-dashboard-demo.vercel.app",
+    //   category: "Security",
+    //   featured: true,
+    //   status: "In Progress",
+    //   year: "2024"
+    // }
   ];
 
   const categories = ['All', 'Web Application', 'Productivity', 'AI/ML', 'Finance', 'Security'];
@@ -228,7 +234,7 @@ const ProjectFilter = () => {
                   <Github className="h-5 w-5 mr-2" />
                   Code
                 </a>
-                <a
+                {/* <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -236,7 +242,7 @@ const ProjectFilter = () => {
                 >
                   <ExternalLink className="h-5 w-5 mr-2" />
                   Live Demo
-                </a>
+                </a> */}
               </div>
             </div>
 

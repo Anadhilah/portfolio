@@ -61,6 +61,7 @@ const About = () => {
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-sm">Cybersecurity</span>
                   <span className="bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-sm">AI </span>
+                  <span className="bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-sm">Robotics</span>
                   <span className="bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-sm">Frontend Dev</span>
                   <span className="bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 px-3 py-1 rounded-full text-sm">Beading</span>
                 </div>
